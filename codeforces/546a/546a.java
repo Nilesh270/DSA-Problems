@@ -22,22 +22,13 @@ public class Main {
     static void solve() throws Exception {
 
         // Write solution here
-        int k = fs.nextInt();
-        int n = fs.nextInt();
-        int w = fs.nextInt();
+        long k = fs.nextLong();
+        long n = fs.nextLong();
+        long w = fs.nextLong();
 
-        int moneyReq = 0;
-        int i = 1;
-        while(i<=w){
-            moneyReq += (i*k);
-            i++;
-        }
+        long moneyReq = k * w * (w + 1) / 2;
 
-        if(moneyReq>n){
-            out.println(moneyReq-n);
-        }else {
-            out.println(0);
-        }
+        out.println(Math.max(0, moneyReq - n));
     }
 
     // ===================== Fast Scanner =====================
